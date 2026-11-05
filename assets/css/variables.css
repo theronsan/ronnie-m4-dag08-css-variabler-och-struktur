@@ -75,6 +75,7 @@
     --radius-card: var(--space-2);
     --radius-image: var(--space-1);
     --radius-button: var(--space-2);
+    --radius-form: var(--space-2);
 
     --font-body: var(--font-sans-serif);
     --font-heading: var(--font-serif);
@@ -150,6 +151,7 @@
     --radius-card: var(--space-2);
     --radius-image: var(--space-1);
     --radius-button: var(--space-2);
+    --radius-form: var(--space-2);
 
     --font-body: var(--font-sans-serif);
     --font-heading: var(--font-serif);
