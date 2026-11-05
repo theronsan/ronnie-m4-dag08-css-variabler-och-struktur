@@ -1,3 +1,13 @@
+/*
+GRUNDINSTÄLLNINGAR
+Border box
+Nollställer margin och paddings
+Body
+Typografi (rubriker, paragrapher, egna klasser
+Länkar
+Responsiva bilder
+*/
+
 /* Padding och border inkluderas i elementets totala storlek */
 *,
 *::before,
