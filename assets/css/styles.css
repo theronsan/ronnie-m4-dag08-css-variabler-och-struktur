@@ -32,13 +32,11 @@ INNEHÅLL
 /***** 2. SEMANTISKA ELEMENT *****/
 body {
     margin: 0;
-    background-color: #fffaf3;
-    color: #222222; /* Kontrast mot body background: 15.32 AAA. Kontrast mot article background: 15.91 AAA. Kontrast mot hero background: 12.65 AAA */
-    font-family:
-        system-ui,
-        Segoe UI,
-        Roboto,
-        sans-serif;
+    background-color: var(--color-background);
+    color: var(
+        --color-text
+    ); /* Kontrast mot body background: 15.32 AAA. Kontrast mot article background: 15.91 AAA. Kontrast mot hero background: 12.65 AAA */
+    font-family: var(--font-body);
     /* rem är bättre än px eftersom rem anger storleken i förhållande till rot-elementets
     storlek och är inte ett fast värde som px är. Det gör att teckenstorleken kan skalas upp
     om en användare ändrar i sin webbläsare att teckenstorleken ska öka/bli större. Det ger en
@@ -46,18 +44,18 @@ body {
     line-height: 1.6;
 }
 header {
-    background-color: #5b3a29;
+    background-color: var(--color-background-header);
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.5rem 1rem;
+    gap: var(--space-small) var(--space-normal);
 }
 footer {
-    background-color: #2b1c14;
+    background-color: var(--color-background-footer);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--space-normal);
 }
 @media (min-width: 600px) {
     footer {
@@ -66,8 +64,10 @@ footer {
 }
 header,
 footer {
-    color: #ffffff; /* Kontast mot header background 10.09 AAA. Kontast mot footer background 16.42 AAA */
-    padding: 16px 24px;
+    color: var(
+        --color-text-header
+    ); /* Kontast mot header background 10.09 AAA. Kontast mot footer background 16.42 AAA */
+    padding: var(--space-normal) var(--space-medium);
 }
 
 nav ul {
@@ -75,15 +75,17 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 20px;
+    gap: var(--space-medium);
 }
 
 nav a {
-    color: #ffffff; /* Kontast mot header background 10.09 AAA. */
+    color: var(--color-nav-link); /* Kontast mot header background 10.09 AAA. */
     text-decoration: none;
 }
 nav a:hover {
-    color: #ffffff; /* Kontast mot header background 10.09 AAA. */
+    color: var(
+        --color-nav-link-hover
+    ); /* Kontast mot header background 10.09 AAA. */
     text-decoration: underline;
     text-decoration-thickness: 2px;
 }
@@ -95,7 +97,7 @@ img {
 
 main {
     max-width: 1100px;
-    padding: 24px;
+    padding: var(--space-medium);
     /* Sätter top/bottom margin till 0 och vänster/höger margin till auto.
     auto gör att elementet får sitt värde automatiskt (lika mycket till vänster som till höger) baserat på förälderns bredd.
     Effekten blir att elementet centreras horisontellt. */
@@ -103,15 +105,15 @@ main {
 }
 
 section:not(:first-child) {
-    margin-top: 2rem;
+    margin-top: var(--space-large);
 }
 
 article {
-    background-color: #ffffff;
-    border: 1px solid #e3d5c3;
-    border-radius: 8px;
-    padding: 16px;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.12);
+    background-color: var(--color-background-card);
+    border: 1px solid var(--color-border-card);
+    border-radius: var(--radius-card);
+    padding: var(--space-normal);
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,14 +135,14 @@ margin 0 | border 1 | padding 16 | content 1034 | padding 16 | border 1 | margin
 
 */
 article img {
-    border-radius: 4px;
+    border-radius: var(--radius-image);
 }
 
 /***** 3. TYPOGRAFI *****/
 h1,
 h2,
 h3 {
-    font-family: Georgia, serif;
+    font-family: var(--font-heading);
     line-height: 1.2;
 }
 h1,
@@ -157,24 +159,30 @@ h3 {
 main h1,
 main h2,
 main h3 {
-    color: #3b2418; /* Kontrast mot article background: 14.47 AAA */
+    color: var(
+        --color-heading
+    ); /* Kontrast mot article background: 14.47 AAA */
 }
 
 p {
-    margin-top: 1rem;
+    margin-top: var(--space-normal);
 }
 
 /***** 4. LÄNKAR *****/
 a {
-    color: #8c1010; /* Kontrast mot article background: 9.56 AAA.  Kontrast mot body background: 9.20 AAA. Kontrast mot hero background: 7.60 AAA */
+    color: var(
+        --color-link
+    ); /* Kontrast mot article background: 9.56 AAA.  Kontrast mot body background: 9.20 AAA. Kontrast mot hero background: 7.60 AAA */
     text-underline-offset: 3px;
 }
 a:hover {
-    color: #5e0a0a; /* Kontrast mot article background: 13.78 AAA.  Kontrast mot body background: 13.27 AAA. Kontrast mot hero background: 10.96 AAA */
+    color: var(
+        --color-link-hover
+    ); /* Kontrast mot article background: 13.78 AAA.  Kontrast mot body background: 13.27 AAA. Kontrast mot hero background: 10.96 AAA */
     text-decoration-thickness: 2px;
 }
 a:focus-visible {
-    outline: 3px solid #1a73e8;
+    outline: 3px solid var(--color-outline);
     outline-offset: 2px;
 }
 
@@ -189,7 +197,7 @@ textarea {
     width: 100%;
     max-width: 28rem;
     padding: 10px 12px;
-    border: 2px solid #8a7a6a;
+    border: 2px solid var(--color-border-form);
     border-radius: 6px;
     font: inherit;
 }
@@ -201,7 +209,7 @@ label {
 fieldset {
     margin-top: 2rem;
     padding: 1.5rem;
-    border: 2px solid #8a7a6a;
+    border: 2px solid var(--color-border-form);
     border-radius: 8px;
     max-width: 28rem;
 }
@@ -226,18 +234,22 @@ footer address p {
     font-style: normal;
 }
 footer a {
-    color: #ffffff; /* Kontrast mot footer background: 16.42 AAA */
+    color: var(
+        --color-text-footer
+    ); /* Kontrast mot footer background: 16.42 AAA */
 }
 footer a:hover {
-    color: #ffffff; /* Kontrast mot footer background: 16.42 AAA */
+    color: var(
+        --color-text-footer
+    ); /* Kontrast mot footer background: 16.42 AAA */
 }
 
 /***** 7. EGNA KLASSER och ID:s *****/
 #hero {
-    background-color: #f3e3cf;
-    padding: 1rem;
-    border-radius: 8px;
-    font-family: system-ui;
+    background-color: var(--color-surface);
+    padding: var(--space-normal);
+    border-radius: var(--radius-card);
+    font-family: var(--font-body);
 }
 #hero h2 {
     margin-top: 0;
@@ -255,19 +267,21 @@ footer a:hover {
 .knapp,
 input[type='submit'] {
     display: inline-block;
-    color: #ffffff; /* Kontrast mot background: 9.56 AAA */
-    background-color: #8c1010;
+    color: var(--color-text-button); /* Kontrast mot background: 9.56 AAA */
+    background-color: var(--color-background-button);
     padding: 12px 20px;
-    margin-top: 1rem;
-    border-radius: 6px;
+    margin-top: var(--space-normal);
+    border-radius: var(--radius-button);
     text-decoration: none;
     border: none;
     cursor: pointer;
 }
 .knapp:hover,
 input[type='submit']:hover {
-    color: #ffffff; /* Kontrast mot hover background: 12.11 AAA */
-    background-color: #6f0c0c;
+    color: var(
+        --color-text-button
+    ); /* Kontrast mot hover background: 12.11 AAA */
+    background-color: var(--color-background-button-hover);
 }
 .knapp:active,
 input[type='submit']:active {
@@ -276,7 +290,7 @@ input[type='submit']:active {
 /* Jag lägger inte in en :focus-visible på knapp-klassen eftersom den redan får den stilen från a-elementet */
 
 .meny-lista {
-    margin-top: 1rem;
+    margin-top: var(--space-normal);
     /* Gör meny-listan till en flexbehållare så att article .meny-item ligger på en rad på större skärmar.
     Detta gör att nu kan man även se att priset justeras mot artikelns botten. */
     /* display: flex;
@@ -286,7 +300,7 @@ input[type='submit']:active {
     /* Skapa en grid */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    gap: var(--space-normal);
 }
 
 .meny-item {
@@ -298,9 +312,7 @@ input[type='submit']:active {
 }
 .meny-item:hover {
     scale: 1.03;
-    box-shadow:
-        0px 2px 20px 0px rgba(0, 0, 0, 0.12),
-        inset 0 0 0 1px #5b3a29;
+    box-shadow: var(--shadow-card-hover);
 }
 
 /* Motivering av valet mellan Flexbox och Grid:
@@ -311,21 +323,25 @@ input[type='submit']:active {
     placeringen i två dimensioner (horisontellt och vertikalt).
 */
 #om-oss img {
-    border-radius: 8px;
+    border-radius: var(--radius-image);
 }
 
 .pris {
-    color: #8c1010; /* Kontrast mot article background: 9.56 AAA */
+    color: var(
+        --color-text-price
+    ); /* Kontrast mot article background: 9.56 AAA */
     margin-top: auto;
-    padding-top: 1rem;
+    padding-top: var(--space-normal);
 }
 .hjalp-text {
-    color: #666666; /* Kontrast mot body background: 5.53 AA */
+    color: var(
+        --color-text-caption
+    ); /* Kontrast mot body background: 5.53 AA */
     font-size: 0.875rem;
     margin-top: 0.25rem;
 }
 .samtycke {
-    margin-top: 1rem;
+    margin-top: var(--space-normal);
 }
 .company-name {
     font-weight: 700;
@@ -346,7 +362,7 @@ input[type='submit']:active {
 
     /* Mer padding i hero */
     #hero {
-        padding: 2rem;
+        padding: var(--space-large);
     }
 
     /* Sista meny-item ska sträcka sig över två kolumner */
@@ -361,7 +377,7 @@ input[type='submit']:active {
     #om-oss {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 1rem;
+        gap: var(--space-normal);
     }
     #om-oss h2 {
         grid-column: 1 / -1;
@@ -391,12 +407,12 @@ input[type='submit']:active {
 
     /* Mer padding i hero */
     #hero {
-        padding: 3rem;
+        padding: var(--space-xlarge);
     }
 
     /* Jag gör inte sidhuvudet bredare, men jag lägger till mer padding ovanför och nedanför
     så att sidhuvudet blir lite högre. */
     header {
-        padding: 2rem 1.5rem;
+        padding: var(--space-large) var(--space-medium);
     }
 }
