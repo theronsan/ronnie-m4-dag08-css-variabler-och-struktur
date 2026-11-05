@@ -159,10 +159,19 @@
 :root[data-theme='dark'] {
     color-scheme: dark;
 
-    --color-background: var(--color-black);
+    --color-background: var(--color-primary-700);
     --color-text: var(--color-white);
-    --color-surface: var(--color-gray-800);
-    --color-border: var(--color-gray-700);
-    --color-background-text: var(--color-gray-100);
-    --color-text-background: var(--color-black);
+
+    --color-heading: var(--color-primary-100);
+    --color-text-caption: var(--color-gray);
+    --color-text-price: var(--color-white);
+
+    --color-surface: var(--color-primary-500);
+    --color-border: var(--color-primary-800);
+
+    --color-background-card: var(--color-primary-500);
+    --color-border-card: var(--color-primary-800);
+
+    --color-background-header: var(--color-primary-800);
+    --color-background-footer: var(--color-primary-800);
 }
