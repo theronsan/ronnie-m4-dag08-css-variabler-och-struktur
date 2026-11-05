@@ -62,7 +62,7 @@
 
     --color-outline: var(--color-blue);
 
-    --color-background-input: var(--color-primary-800);
+    --color-background-input: var(--color-white);
     --color-border-form: var(--color-gray);
 
     --space-xsmall: var(--space-1);
@@ -100,6 +100,8 @@
 
         --color-background-header: var(--color-primary-800);
         --color-background-footer: var(--color-primary-800);
+
+        --color-background-input: var(--color-primary-800);
     }
 }
 
