@@ -200,6 +200,7 @@ textarea {
     border: 2px solid var(--color-border-form);
     border-radius: 6px;
     font: inherit;
+    background-color: var(--color-background-input);
 }
 label {
     font-weight: 700;
